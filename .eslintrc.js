@@ -56,7 +56,7 @@ module.exports = {
       }
     ],
     'template-curly-spacing': 'off',
-    'indent': 'off'
+    'indent': 'off',
   },
   parserOptions: {
     parser: 'babel-eslint'

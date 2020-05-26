@@ -11,6 +11,36 @@ export const asyncRouterMap = [
     meta: { title: '首页' },
     redirect: '/dashboard/workplace',
     children: [
+      // study-ant-design
+      {
+        path: '/study-ant-design',
+        redirect: '/study-ant-design/table',
+        component: PageView,
+        meta: { title: 'ant-design学习', icon: 'form', permission: [ 'form' ] },
+        children: [
+          {
+            path: '/study-ant-design/table',
+            name: 'Table',
+            component: RouteView,
+            meta: { title: '表格', keepAlive: true, permission: [ 'form' ] },
+            children: [
+              {
+                path: '/study-ant-design/table/basic',
+                name: 'BasicTable',
+                component: () => import('@/views/study-ant-design/table/Basic2'),
+                meta: { title: '基础表格', keepAlive: true, permission: [ 'form' ] }
+              }
+            ]
+          },
+          {
+            path: '/study-ant-design/badage',
+            name: 'Badage',
+            component: () => import('@/views/study-ant-design/badage/Basic'),
+            meta: { title: 'Badage', keepAlive: true, permission: [ 'form' ] }
+          }
+        ]
+      },
+
       // dashboard
       {
         path: 'dashboard',
@@ -42,30 +72,6 @@ export const asyncRouterMap = [
             name: 'TestWork',
             component: () => import('@/views/dashboard/TestWork'),
             meta: { title: '测试功能', keepAlive: true, permission: [ 'dashboard' ] }
-          }
-        ]
-      },
-
-      // study-ant-design
-      {
-        path: '/study-ant-design',
-        redirect: '/study-ant-design/table',
-        component: PageView,
-        meta: { title: 'ant-design学习', icon: 'form', permission: [ 'form' ] },
-        children: [
-          {
-            path: '/study-ant-design/table',
-            name: 'Table',
-            component: RouteView,
-            meta: { title: '表格', keepAlive: true, permission: [ 'form' ] },
-            children: [
-              {
-                path: '/study-ant-design/table/basic',
-                name: 'BasicTable',
-                component: () => import('@/views/study-ant-design/table/Basic'),
-                meta: { title: '基础表格', keepAlive: true, permission: [ 'form' ] }
-              }
-            ]
           }
         ]
       },
