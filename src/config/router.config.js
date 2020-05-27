@@ -3,7 +3,6 @@ import { UserLayout, BasicLayout, RouteView, BlankLayout, PageView } from '@/lay
 import { bxAnaalyse } from '@/core/icons'
 
 export const asyncRouterMap = [
-
   {
     path: '/',
     name: 'index',
@@ -33,10 +32,16 @@ export const asyncRouterMap = [
             ]
           },
           {
-            path: '/study-ant-design/badage',
-            name: 'Badage',
-            component: () => import('@/views/study-ant-design/badage/Basic'),
-            meta: { title: 'Badage', keepAlive: true, permission: [ 'form' ] }
+            path: '/study-ant-design/badge',
+            name: 'Badge',
+            component: () => import('@/views/study-ant-design/badge/Basic'),
+            meta: { title: 'Badge', keepAlive: true, permission: [ 'form' ] }
+          },
+          {
+            path: '/study-ant-design/menu',
+            name: 'Menu',
+            component: () => import('@/views/study-ant-design/menu/Basic'),
+            meta: { title: 'Menu', keepAlive: true, permission: [ 'form' ] }
           }
         ]
       },
